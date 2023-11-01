@@ -5,7 +5,7 @@ using Bulky.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
 
-namespace BulkyWeb.Controllers
+namespace BulkyWeb.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
@@ -45,7 +45,7 @@ namespace BulkyWeb.Controllers
                 return NotFound();
             }
 
-            Category? categoryFromDb = _unitOfWork.categoryRepository.Get(x=>x.Id==Id);
+            Category? categoryFromDb = _unitOfWork.categoryRepository.Get(x => x.Id == Id);
 
             if (categoryFromDb == null)
             {
